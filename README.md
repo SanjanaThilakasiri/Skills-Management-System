@@ -51,8 +51,8 @@ It is built using Node.js, Express.js, and MySQL and exposes REST APIs for CRUD 
 
 ## 🔗 API Endpoints Implemented
 
-**(Only personal CRUD and Skills CRUD implemented so far)**
-### Personal Details CRUD
+
+### 1. Personal Details CRUD
 #### ➕ Create Personal
 ```bash
 POST /personal
@@ -77,7 +77,7 @@ PUT /personal/:id
 DELETE /personal/:id
 
 ```
-### Skills CRUD
+### 2. Skills CRUD
 
 #### ➕ Create Skill
 ```bash
@@ -103,10 +103,16 @@ PUT /skills/:id
 DELETE /skills/:id
 
 ```
+### 3. Assign skills to personal details
+```bash
+POST /personal/:id/skills
+
+
+```
 ## 🧪 API Testing
 
 **All APIs were tested using Thunder Client.**
-### Personal Details CRUD
+### 1. Personal Details CRUD
 #### - Create personal (POST)
 ![Screenshot 2026-01-09 211622](https://github.com/user-attachments/assets/03d18726-d5a6-4db8-9fab-d2e565cff2d1)
 
@@ -120,7 +126,7 @@ DELETE /skills/:id
 #### - Delete personal record (DELETE)
 ![Screenshot 2026-01-09 213359](https://github.com/user-attachments/assets/f68685d3-20bb-4ba4-8ccb-17618465ecc8)
 
-### Skills CRUD
+### 2. Skills CRUD
 
 #### - Create Skill
 ![POST](https://github.com/user-attachments/assets/31c26578-b700-4ab7-a7c7-f5356abac97b)
@@ -134,6 +140,8 @@ DELETE /skills/:id
 #### - Delete Skill
 ![DELETE](https://github.com/user-attachments/assets/90db20d4-af8e-4bac-a06a-e2dddc76547f)
 
+### 3. Assign skills to personal details
+![POST](https://github.com/user-attachments/assets/002962ae-177d-476f-8cbb-a6ece69ef8be)
 
 ## ▶️ How to Run the Backend
 > [!NOTE]
