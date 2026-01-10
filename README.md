@@ -187,4 +187,4 @@ Server running on port 5000
 ### 🚧 Work In Progress
 ### ✅ Next Step
 
-👉 Implement Skills CRUD
+👉 Implement Projects CRUD
