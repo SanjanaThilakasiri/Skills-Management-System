@@ -174,6 +174,35 @@ app.delete("/skills/:id", (req, res) => {
   });
 });
 
+//Personal Skills Endpoints
+
+app.post("/personal/:id/skills", (req, res) => {
+  const personalId = req.params.id;
+  const { skills_id, proficiency } = req.body;
+
+  // basic validation
+  if (!skills_id || !proficiency) {
+    return res.status(400).json({
+      message: "Skill ID and proficiency are required"
+    });
+  }
+
+  const sql =
+    "INSERT INTO personnel_skills (personal_id, skills_id, proficiency) VALUES (?, ?, ?)";
+
+  db.query(sql, [personalId, skills_id, proficiency], (err, result) => {
+    if (err) {
+      console.log(err);
+      return res.status(500).json({ message: "Database error" });
+    }
+
+    res.status(201).json({
+      message: "Skill assigned to personal details successfully",
+      id: result.insertId
+    });
+  });
+});
+
 
 app.listen(5000, () => {
   console.log("Server running on port 5000");
