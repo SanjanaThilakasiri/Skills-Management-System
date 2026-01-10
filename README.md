@@ -51,48 +51,88 @@ It is built using Node.js, Express.js, and MySQL and exposes REST APIs for CRUD 
 
 ## 🔗 API Endpoints Implemented
 
-**(Only personal CRUD is implemented so far)**
-### ➕ Create Personal
+**(Only personal CRUD and Skills CRUD implemented so far)**
+### Personal Details CRUD
+#### ➕ Create Personal
 ```bash
 POST /personal
 
 ```
-### 📥 Get All Personal
+#### 📥 Get All Personal
 
 ```bash
 GET /personal
 
 ```
 
-### ✏️ Update Personal
+#### ✏️ Update Personal
 ```bash
 PUT /personal/:id
 
 ```
 
-### 🗑️ Delete Personal
+#### 🗑️ Delete Personal
 
 ```bash
 DELETE /personal/:id
 
 ```
+### Skills CRUD
 
+#### ➕ Create Skill
+```bash
+POST /skills
+
+```
+#### 📥 Get All Skills
+
+```bash
+GET /skills
+
+```
+
+#### ✏️ Update Skill
+```bash
+PUT /skills/:id
+
+```
+
+#### 🗑️ Delete Skill
+
+```bash
+DELETE /skills/:id
+
+```
 ## 🧪 API Testing
 
 **All APIs were tested using Thunder Client.**
-
-### - Create personal (POST)
+### Personal Details CRUD
+#### - Create personal (POST)
 ![Screenshot 2026-01-09 211622](https://github.com/user-attachments/assets/03d18726-d5a6-4db8-9fab-d2e565cff2d1)
 
 
-### - Retrieve personal list (GET)
+#### - Retrieve personal list (GET)
 ![Screenshot 2026-01-09 212326](https://github.com/user-attachments/assets/323194fe-ab3d-412e-9c4f-9323770113dc)
 
-### - Update personal details (PUT)
+#### - Update personal details (PUT)
 ![Screenshot 2026-01-09 212644](https://github.com/user-attachments/assets/959519c5-c395-4051-aecb-8a148f43a648)
 
-### - Delete personal record (DELETE)
+#### - Delete personal record (DELETE)
 ![Screenshot 2026-01-09 213359](https://github.com/user-attachments/assets/f68685d3-20bb-4ba4-8ccb-17618465ecc8)
+
+### Skills CRUD
+
+#### - Create Skill
+![POST](https://github.com/user-attachments/assets/31c26578-b700-4ab7-a7c7-f5356abac97b)
+
+#### - Retrive Skills list
+![GET](https://github.com/user-attachments/assets/ddc78ba6-d02c-4851-a871-3a512f3306ea)
+
+#### - Update Skill
+![PUT](https://github.com/user-attachments/assets/47b7d30e-b07c-4c28-93c1-5dfd86480867)
+
+#### - Delete Skill
+![DELETE](https://github.com/user-attachments/assets/90db20d4-af8e-4bac-a06a-e2dddc76547f)
 
 
 ## ▶️ How to Run the Backend
