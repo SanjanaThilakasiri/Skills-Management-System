@@ -13,12 +13,25 @@
 
 ## 🗄️ Database
 
+
 - Database creation using SQL
 
 - Tables with proper primary keys and foreign key readiness
 
 - ENUM usage for experience levels
 ## 📂 Database Schema Overview
+### ER Diagram
+**Designed via lucidchart.com**
+<img width="2576" height="2332" alt="Blank board (3)" src="https://github.com/user-attachments/assets/756551a4-a365-4736-ad2d-38e343215c46" />
+**Designed via lucidchart.com**
+```bash
+https://lucid.app/lucidspark/11d881a1-0415-48ef-afb3-06a436f95544/edit?viewport_loc=259%2C734%2C2591%2C1330%2C0_0&invitationId=inv_7b700f39-de94-4c11-af64-4862da2def6d
+
+```
+<img width="1078" height="744" alt="Untitled (1)" src="https://github.com/user-attachments/assets/ede90f11-ae86-4a76-816a-7213ae066ca3" />
+
+**Designed via dbdiagram.io**
+
 ### Database Name - **sms_db**
 ### Tables Created
 
