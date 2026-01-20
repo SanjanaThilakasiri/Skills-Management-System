@@ -4,8 +4,12 @@ const db = require("./db");
 
 const app = express();
 
+
 app.use(cors());
 app.use(express.json());
+
+const projectsRoutes = require("./routes/projectsRoutes");
+app.use("/", projectsRoutes);
 
 app.get("/", (req, res) => {
   res.send("Backend is running ");
@@ -16,7 +20,7 @@ app.get("/", (req, res) => {
 app.post("/personal", (req, res) => {
   const { name, email, role, experience_level } = req.body;
 
-  // basic validation
+ 
   if (!name || !email) {
     return res.status(400).json({ message: "Name and Email are required" });
   }
@@ -99,7 +103,7 @@ app.delete("/personal/:id", (req, res) => {
 app.post("/skills", (req, res) => {
   const { name, category, description } = req.body;
 
-  // basic validation
+  
   if (!name) {
     return res.status(400).json({ message: "Skill name is required" });
   }
@@ -180,7 +184,7 @@ app.post("/personal/:id/skills", (req, res) => {
   const personalId = req.params.id;
   const { skills_id, proficiency } = req.body;
 
-  // basic validation
+  
   if (!skills_id || !proficiency) {
     return res.status(400).json({
       message: "Skill ID and proficiency are required"
@@ -204,6 +208,126 @@ app.post("/personal/:id/skills", (req, res) => {
 });
 
 
+//Project Endpoints
+
+app.post("/projects", (req, res) => {
+  const { name, description, start_date, end_date, status } = req.body;
+
+  if (!name) {
+    return res.status(400).json({ message: "Project name is required" });
+  }
+
+  const sql =
+    "INSERT INTO projects (name, description, start_date, end_date, status) VALUES (?, ?, ?, ?, ?)";
+
+  db.query(
+    sql,
+    [name, description, start_date, end_date, status],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+        return res.status(500).json({ message: "Database error" });
+      }
+
+      res.status(201).json({
+        message: "Project created successfully",
+        id: result.insertId
+      });
+    }
+  );
+});
+
+app.get("/projects", (req, res) => {
+  const sql = "SELECT * FROM projects";
+
+  db.query(sql, (err, results) => {
+    if (err) {
+      console.log(err);
+      return res.status(500).json({ message: "Database error" });
+    }
+
+    res.json(results);
+  });
+});
+
+app.put("/projects/:id", (req, res) => {
+  const { id } = req.params;
+  const { name, description, start_date, end_date, status } = req.body;
+
+  const sql =
+    "UPDATE projects SET name=?, description=?, start_date=?, end_date=?, status=? WHERE id=?";
+
+  db.query(
+    sql,
+    [name, description, start_date, end_date, status, id],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+        return res.status(500).json({ message: "Database error" });
+      }
+
+      if (result.affectedRows === 0) {
+        return res.status(404).json({ message: "Project not found" });
+      }
+
+      res.json({ message: "Project updated successfully" });
+    }
+  );
+});
+
+
+app.delete("/projects/:id", (req, res) => {
+  const { id } = req.params;
+
+  const sql = "DELETE FROM projects WHERE id=?";
+
+  db.query(sql, [id], (err, result) => {
+    if (err) {
+      console.log(err);
+      return res.status(500).json({ message: "Database error" });
+    }
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ message: "Project not found" });
+    }
+
+    res.json({ message: "Project deleted successfully" });
+  });
+});
+
+//Required skills for Projects Endpoints
+
+app.post("/projects/:id/skills", (req, res) => {
+  const projectId = req.params.id;
+  const { skills_id, min_proficiency } = req.body;
+
+ 
+  if (!skills_id || !min_proficiency) {
+    return res.status(400).json({
+      message: "Skill ID and minimum proficiency are required"
+    });
+  }
+
+  const sql =
+    "INSERT INTO project_required_skills (project_id, skills_id, min_proficiency) VALUES (?, ?, ?)";
+
+  db.query(sql, [projectId, skills_id, min_proficiency], (err, result) => {
+    if (err) {
+      console.log(err);
+      return res.status(500).json({ message: "Project ID or Skill ID does not exist" });
+    }
+
+    res.status(201).json({
+      message: "Required skill added to project successfully",
+      id: result.insertId
+    });
+  });
+});
+
+
+
 app.listen(5000, () => {
   console.log("Server running on port 5000");
 });
+
+
