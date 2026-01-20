@@ -28,7 +28,8 @@
 https://lucid.app/lucidspark/11d881a1-0415-48ef-afb3-06a436f95544/edit?viewport_loc=259%2C734%2C2591%2C1330%2C0_0&invitationId=inv_7b700f39-de94-4c11-af64-4862da2def6d
 
 ```
-<img width="1078" height="744" alt="Untitled (1)" src="https://github.com/user-attachments/assets/ede90f11-ae86-4a76-816a-7213ae066ca3" />
+<img width="967" height="665" alt="Untitled (2)" src="https://github.com/user-attachments/assets/9ccacde0-bbc1-45ec-87d4-b3298577ad19" />
+
 
 **Designed via dbdiagram.io**
 
@@ -39,7 +40,7 @@ https://lucid.app/lucidspark/11d881a1-0415-48ef-afb3-06a436f95544/edit?viewport_
 
 - skills
 
-- personnel_skills
+- personal_skills
 
 - projects
 
