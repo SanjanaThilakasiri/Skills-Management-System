@@ -1,6 +1,7 @@
 # 📌 Skill Management System 
 ### (🚧 Work In Progress)
 
+# Backend
 ## 🛠️ Technology Stack
 
 - Backend: Node.js, Express.js
@@ -200,8 +201,76 @@ Database connected successfully
 Server running on port 5000
 
 ```
+# Frontend
+
+A modern **React.js frontend** for managing organizational skills and assigning required skills to projects. Built with **React**, **Tailwind CSS**, and **Axios** for API communication with a Node.js backend.
+
+## Demo
+
+This frontend interacts with a backend API to:
+
+- Add, edit, and delete **skills**
+- Assign skills to **projects** with minimum proficiency
+- Edit or remove assigned skills
+- View all skills and project-specific required skills in tables
+
+---
+
+## Features
+
+- **Skills Management**
+  - Create, update, and delete skills
+  - Categorize skills (Frontend, Backend, DevOps, etc.)
+  - View skills in a table with color-coded badges
+- **Project Skills Management**
+  - Assign required skills to projects
+  - Set minimum proficiency levels (Beginner → Expert)
+  - Edit or delete assigned skills
+  - Interactive UI
+
+- **Modern UI**
+  - Tailwind CSS for clean, consistent styling
+  - Smooth hover effects, transitions, and badges
+ 
+
+---
+
+## Technologies Used
+
+- **React.js** – Frontend framework
+- **Tailwind CSS** – Styling
+- **Axios** – API requests
+- **React Hooks** – State and lifecycle management
+
+---
+## Screenshots
+![personal](https://github.com/user-attachments/assets/94a632da-988b-4290-a408-e5e356402be9)
+![add skills](https://github.com/user-attachments/assets/d418554b-8430-4d3e-b42a-3065762a4290)
+![assign skills](https://github.com/user-attachments/assets/86aa1ccc-8225-4a84-b306-0a0dc057a059)
+![projects](https://github.com/user-attachments/assets/6de2cb9a-932d-40e9-9437-e22d572618da)
+![projects skills](https://github.com/user-attachments/assets/c0985c4f-0cf1-4aa8-a666-cdc8b8d46f39)
+
+
+## Installation
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/SanjanaThilakasiri/Skills-Management-System.git
+cd frontend
+```
+2. **Install dependencies**
+```bash
+npm install
+```
+3. **Run the project**
+```bash
+npm run dev
+```
+
 
 ### 🚧 Work In Progress
 ### ✅ Next Step
 
-👉 Create Frontend UI
+👉 Improve functionality, UI
+
