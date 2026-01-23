@@ -56,3 +56,4 @@ CREATE TABLE project_required_skills (
     ON DELETE CASCADE
 );
 
+
